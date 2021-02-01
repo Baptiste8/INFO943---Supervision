@@ -1,0 +1,25 @@
+<!-- app/templates/iot_homepage.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IOT_INFO943_Singularity</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/iot_css.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% block somejs %}{% endblock %}
+</head>
+<body>
+    <div id="mainContainer" class="jumbotron text-center container">
+        <h1>IOT Singularity Web Site</h1>
+        {% block content %}
+        <p>Sur ce site vous allez pouvoir visualiser les containers montés sur la machine de votre choix.<br>Veuillez renseigner son adresse IP (ifconfig).</p>
+        <form method="GET" action="/iot_containers">
+            <input type="text" id="machine" name="machine" required pattern="193.48.125.[0-9]{1-3}" value="193.48.125.">
+            <button type="submit" class="btn btn-outline-secondary">Configure Container</button>
+        </form>
+        {% endblock %}
+        <p>{{message}}</p>
+    </div>
+</body>
+</html>

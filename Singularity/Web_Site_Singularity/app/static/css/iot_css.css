@@ -1,0 +1,19 @@
+table, td, th { 
+    border: 1px solid #ddd; 
+    text-align: center; 
+} 
+table { 
+    border-collapse: collapse;
+    margin:auto;
+    margin-bottom: 15px;
+}
+th, td { 
+    padding: 15px;
+}
+#machine, .groupcontainer{
+    text-align: center;
+}
+
+#mainContainer {
+    margin-top: 20px;
+}

@@ -1,0 +1,38 @@
+{# app/templates/iot_containers.html #}
+
+{% extends 'iot_homepage.html' %}
+
+{% block somejs %}
+{% endblock %}
+
+{% block content %}
+    <form id="containerList" method="POST" action="/">
+        <p>Parametrez le container Alpine déployé sur la machine {{machine}}.</p>
+        
+        <div id='inputTable'>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Alpine Container Settings on {{machine}}</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input class = "groupcontainer" type = "number" name = "cpu" value = "50" min = "0" max = "100">
+                    </td>
+                    <td>
+                        <p>Charge du CPU (%)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class = "groupcontainer" type = "number" name = "time" value = "5" min = "0" max = "600">
+                    </td>
+                    <td>
+                        <p>Temps de charge (sec)</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <button type="submit" id="runButton" name="machine" class="btn btn-outline-secondary" value="{{machine}}">Run</button>
+    </form>
+{% endblock %}
