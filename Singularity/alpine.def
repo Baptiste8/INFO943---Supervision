@@ -1,0 +1,17 @@
+Bootstrap: docker
+From: alpine
+
+%help
+Image Alpine
+
+%post
+	apk update
+	apk add stress-ng
+
+%environment
+	cpuload=80
+	timeout=30
+	export cpuload timeout
+
+%runscript
+	stress-ng --cpu 0 --cpu-method all --cpu-load ${cpuload} --timeout ${timeout}
